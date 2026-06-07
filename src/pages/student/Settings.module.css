@@ -1,0 +1,114 @@
+.saveButton {
+  gap: 8px;
+  border-color: var(--gla-orange);
+  background: var(--gla-orange);
+  color: #ffffff;
+}
+
+.saveButton:hover {
+  border-color: var(--gla-orange-hover);
+  background: var(--gla-orange-hover);
+  color: #ffffff;
+}
+
+.statusCard {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.5fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 20px;
+  border-color: #e5e7eb;
+}
+
+.statusCard h2 {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.statusCard a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.statusGrid p {
+  display: grid;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.statusGrid span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.statusGrid strong {
+  color: #111111;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.impactControls {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: center;
+  gap: 12px !important;
+}
+
+.impactControls em {
+  padding: 3px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #1f5f99;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.securityList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.securityList button {
+  min-height: 36px;
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111111;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: left;
+}
+
+.securityList button:hover {
+  background: #f7f7f7;
+}
+
+@media (max-width: 1100px) {
+  .statusCard,
+  .statusGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .securityList {
+    grid-template-columns: 1fr;
+  }
+}

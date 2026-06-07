@@ -1,0 +1,300 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(380px, 0.85fr);
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111111;
+}
+
+.brandPanel,
+.authPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brandPanel {
+  gap: 34px;
+  padding: 64px clamp(32px, 7vw, 96px);
+  border-right: 1px solid #e5e7eb;
+}
+
+.authPanel {
+  padding: 40px clamp(24px, 5vw, 64px);
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  margin-top: 4px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.green {
+  color: #2e7d32;
+}
+
+.blue {
+  color: #1f5f99;
+}
+
+.orange {
+  color: var(--gla-orange);
+}
+
+.ai {
+  color: #111111;
+}
+
+.platformLabel {
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.message {
+  max-width: 680px;
+}
+
+.message h1 {
+  color: #111111;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.message h1 span {
+  display: block;
+  color: #111111;
+  opacity: 0.5;
+}
+
+.message p {
+  max-width: 620px;
+  margin-top: 22px;
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 640px;
+  padding-top: 4px;
+}
+
+.metric {
+  display: grid;
+  gap: 2px;
+  padding-top: 12px;
+  border-top: 2px solid #f26a2e;
+}
+
+.metric strong {
+  color: #111111;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.metric span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.loginCard {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.loginHeader {
+  margin-bottom: 26px;
+}
+
+.loginHeader h2 {
+  color: #111111;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.loginHeader p {
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.roleTabs {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 26px;
+  overflow-x: auto;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.roleTabs button {
+  flex: 0 0 auto;
+  padding: 0 0 10px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.roleTabs button:hover,
+.roleTabs .activeRole {
+  color: #111111;
+}
+
+.roleTabs .activeRole {
+  border-bottom-color: #f26a2e;
+  font-weight: 600;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.form label {
+  display: grid;
+  gap: 8px;
+  color: #4b5563;
+  font-size: 12px;
+}
+
+.form input {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111111;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #111111;
+}
+
+.signInButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  margin-top: 4px;
+  border: 1px solid var(--gla-orange);
+  border-radius: 6px;
+  background: var(--gla-orange);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.signInButton:hover {
+  border-color: var(--gla-orange-hover);
+  background: var(--gla-orange-hover);
+}
+
+.signInButton svg {
+  flex-shrink: 0;
+}
+
+.forgotButton {
+  width: fit-content;
+  margin: 0 auto;
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.footerText {
+  display: grid;
+  gap: 4px;
+  margin-top: 28px;
+  color: #9ca3af;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .brandPanel {
+    gap: 26px;
+    padding: 48px 24px 36px;
+    border-right: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .authPanel {
+    padding: 32px 24px 48px;
+  }
+
+  .message h1 {
+    font-size: 40px;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .brandPanel {
+    padding: 36px 18px 28px;
+  }
+
+  .authPanel {
+    padding: 24px 18px 40px;
+  }
+
+  .logo {
+    width: 132px;
+  }
+
+  .wordmark {
+    font-size: 26px;
+  }
+
+  .message h1 {
+    font-size: 34px;
+  }
+
+  .message p {
+    font-size: 15px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .loginCard {
+    padding: 24px;
+  }
+}
