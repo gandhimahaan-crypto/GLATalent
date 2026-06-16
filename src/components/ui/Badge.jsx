@@ -1,5 +1,6 @@
-import { cn } from "../../utils/cn";
+import styles from './Badge.module.css'
 
-export function Badge({ children, tone = "default", className }) {
-  return <span className={cn("badge", tone !== "default" && `badge-${tone}`, className)}>{children}</span>;
+export default function Badge({ variant = 'default', children }) {
+  const key = String(variant).toLowerCase()
+  return <span className={`${styles.badge} ${styles[key] || styles.default}`}>{children}</span>
 }

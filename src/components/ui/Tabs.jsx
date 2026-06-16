@@ -1,13 +1,5 @@
-import { cn } from "../../utils/cn";
+import styles from './Tabs.module.css'
 
-export function Tabs({ tabs, active, onChange }) {
-  return (
-    <div className="tabs">
-      {tabs.map((tab) => (
-        <button key={tab} className={cn("tab", active === tab && "active")} onClick={() => onChange(tab)}>
-          {tab}
-        </button>
-      ))}
-    </div>
-  );
+export default function Tabs({ tabs, active, onChange }) {
+  return <div className={styles.tabs}>{tabs.map((tab) => <button key={tab} className={tab === active ? styles.active : ''} onClick={() => onChange(tab)}>{tab}</button>)}</div>
 }

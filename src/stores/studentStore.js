@@ -1,13 +1,8 @@
-import { create } from "zustand";
-import { mockPrediction, mockStudentProfile } from "../services/mockApi";
+import { create } from 'zustand'
+import { profile } from '../data/mockStudents'
+import { prediction } from '../data/mockPredictions'
 
-export const useStudentStore = create((set) => ({
-  profile: mockStudentProfile,
-  predictions: {
-    probability: mockPrediction.placementProbability,
-    readiness: mockPrediction.readinessScore,
-    packageRange: mockPrediction.expectedPackage,
-    bestDomain: mockPrediction.bestFitDomain.name,
-  },
-  setProfile: (profile) => set({ profile }),
-}));
+export const useStudentStore = create(() => ({
+  profile,
+  prediction,
+}))

@@ -1,3 +1,3 @@
 export function formatCurrency(value) {
-  return `₹${value}L`;
+  return `Rs. ${Number(value).toFixed(1)}L`
 }

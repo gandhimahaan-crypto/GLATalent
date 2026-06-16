@@ -1,45 +1,24 @@
-import { MonoBarChart } from "../../components/charts/BarChart";
-import { MonoLineChart } from "../../components/charts/LineChart";
-import { PageWrapper } from "../../components/layout/PageWrapper";
-import { Badge } from "../../components/ui/Badge";
-import { Card } from "../../components/ui/Card";
-import { Table } from "../../components/ui/Table";
-import { useDashboardStats } from "../../hooks/usePredictions";
+import Badge from '../../components/ui/Badge'
+import Button from '../../components/ui/Button'
+import Card from '../../components/ui/Card'
+import Table from '../../components/ui/Table'
+import BarChartWrapper from '../../components/charts/BarChartWrapper'
+import LineChartWrapper from '../../components/charts/LineChartWrapper'
+import PageWrapper from '../../components/layout/PageWrapper'
+import { placementTrend } from '../../data/mockPlacements'
+import { students } from '../../data/mockStudents'
+import styles from './Dashboard.module.css'
 
-export function AdminDashboard() {
-  const { data: stats, isLoading, error } = useDashboardStats();
-  const students = stats?.students || [];
-  const rows = students.slice(0, 9).map((student, index) => ({
-    Rank: index + 1, "Student Name": student.name, "Roll No.": student.rollNo, CGPA: student.cgpa,
-    "Readiness Score": `${student.readiness}/100`, "Predicted Domain": student.domain,
-    "Risk Level": <Badge tone={student.risk === "High" ? "danger" : student.risk === "Medium" ? "warning" : "success"}>{student.risk}</Badge>,
-    Action: <a>View Profile</a>,
-  }));
-
-  if (isLoading) {
-    return (
-      <PageWrapper sidebar="admin">
-        <Card><p>Loading data...</p></Card>
-      </PageWrapper>
-    );
-  }
-
-  if (error) {
-    return (
-      <PageWrapper sidebar="admin">
-        <Card><h2>Unable to load data.</h2><p>{error.message}</p></Card>
-      </PageWrapper>
-    );
-  }
-
+export default function Dashboard() {
+  const atRisk = students.filter((student) => student.risk !== 'Low')
   return (
-    <PageWrapper sidebar="admin">
-      <div className="page-head"><h1>Institution Analytics</h1></div>
-      <section className="grid four">{stats?.metrics?.length ? stats.metrics.map(([value, label]) => <Card className="metric" key={label}><h2>{value}</h2><p>{label}</p></Card>) : <Card><p>No data available yet.</p></Card>}</section>
-      <section className="grid two"><Card><h2>Domain Distribution</h2>{stats?.domains?.length ? <MonoBarChart data={stats.domains} xKey="name" yKey="value" /> : <p>No data available yet.</p>}</Card><Card><h2>Batch Readiness Distribution</h2>{stats?.readinessDistribution?.length ? <MonoBarChart data={stats.readinessDistribution} xKey="range" yKey="students" /> : <p>No data available yet.</p>}</Card></section>
-      <Card><h2>At-Risk Students</h2>{rows.length ? <><Table columns={["Rank", "Student Name", "Roll No.", "CGPA", "Readiness Score", "Predicted Domain", "Risk Level", "Action"]} rows={rows} /><div className="pagination">Prev <strong>1</strong> 2 3 Next</div></> : <p>No data available yet.</p>}</Card>
-      <Card><h2>Year-wise Placement Trend</h2>{stats?.placementTrend?.length ? <MonoLineChart data={stats.placementTrend} lines={["rate"]} /> : <p>No data available yet.</p>}</Card>
-      <section className="grid three">{(stats?.summaryCards || []).map(([value, label]) => <Card key={label}><span className="caption">{label}</span>{value.includes(",") ? <p>{value}</p> : <h2>{value}</h2>}</Card>)}</section>
+    <PageWrapper title="Institution Overview" subtitle="Placement forecast intelligence across GLA University">
+      <div className={styles.stack}>
+        <div className={styles.kpis}>{['Total Students 847', 'Avg Readiness 64/100', 'Predicted Place % 71%', 'Avg Package Rs. 5.4L'].map((kpi) => <Card key={kpi} className={styles.kpi}><strong>{kpi}</strong></Card>)}</div>
+        <div className={styles.twoCol}><Card><h3>Domain Distribution</h3><BarChartWrapper data={[{ name: 'Software', value: 340 }, { name: 'Data', value: 186 }, { name: 'Cloud', value: 135 }, { name: 'Cyber', value: 84 }, { name: 'Consulting', value: 68 }, { name: 'AI/ML', value: 54 }]} /></Card><Card><h3>Readiness Histogram</h3><BarChartWrapper data={[{ name: '0-20', value: 45 }, { name: '20-40', value: 98 }, { name: '40-60', value: 234 }, { name: '60-80', value: 312 }, { name: '80-100', value: 158 }]} /></Card></div>
+        <Card><h3>Students Needing Intervention <Badge variant="danger">{atRisk.length}</Badge></h3><Table columns={[{ key: 'rank', label: 'Rank', render: (_, index) => index }, { key: 'name', label: 'Name' }, { key: 'rollNo', label: 'Roll' }, { key: 'cgpa', label: 'CGPA' }, { key: 'readiness', label: 'Readiness' }, { key: 'domain', label: 'Domain' }, { key: 'risk', label: 'Risk', render: (row) => <Badge variant={row.risk}>{row.risk}</Badge> }, { key: 'action', label: 'Action', render: () => <Button size="sm" variant="secondary">View Profile</Button> }]} rows={atRisk} /></Card>
+        <div className={styles.threeCol}><Card><h3>Placement Trend</h3><LineChartWrapper data={placementTrend} /></Card><Card><h3>Top Companies</h3><ol><li>TCS</li><li>Infosys</li><li>Deloitte</li><li>Amazon</li></ol></Card><Card><h3>Demanded Domains</h3><ol><li>Software 41%</li><li>Data 22%</li><li>Cloud 16%</li></ol></Card></div>
+      </div>
     </PageWrapper>
-  );
+  )
 }

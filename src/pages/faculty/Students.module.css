@@ -1,0 +1,4 @@
+.stack { max-width: var(--content-max); margin: 0 auto; display: grid; gap: 16px; }
+.filters { display: grid; grid-template-columns: 1fr 180px 190px; gap: 12px; }
+.filters select { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 9px; background: #fff; }
+@media (max-width: 760px) { .filters { grid-template-columns: 1fr; } }

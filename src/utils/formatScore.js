@@ -1,3 +1,3 @@
 export function formatScore(value) {
-  return `${value}/100`;
+  return `${Math.round(value)}%`
 }

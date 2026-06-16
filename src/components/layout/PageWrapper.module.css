@@ -1,0 +1,7 @@
+.page { min-height: 100vh; padding: calc(var(--navbar-height) + 24px) 24px 32px; background: var(--color-surface); transition: padding-left 0.2s ease; }
+.withSidebar { padding-left: calc(var(--sidebar-width) + 24px); }
+.header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; max-width: var(--content-max); margin: 0 auto 18px; }
+.header h1 { font-size: 28px; line-height: 1.2; }
+.header p { color: var(--color-muted); }
+.actions { display: flex; gap: 8px; }
+@media (max-width: 760px) { .page, .withSidebar { padding-left: 16px; padding-right: 16px; } .header { flex-direction: column; } }

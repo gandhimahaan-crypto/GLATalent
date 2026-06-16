@@ -1,5 +1,5 @@
-import { cn } from "../../utils/cn";
+import styles from './Card.module.css'
 
-export function Card({ children, className }) {
-  return <section className={cn("card", className)}>{children}</section>;
+export default function Card({ children, padding = 'md', className = '' }) {
+  return <div className={`${styles.card} ${styles[padding]} ${className}`}>{children}</div>
 }

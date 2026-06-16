@@ -1,0 +1,5 @@
+.grid { max-width: var(--content-max); margin: 0 auto; display: grid; grid-template-columns: 320px 1fr; gap: 16px; }
+.grid button { width: 100%; text-align: left; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px; margin-bottom: 8px; }
+.grid .active { border-color: var(--gla-orange); background: var(--gla-orange-light); }
+textarea { width: 100%; min-height: 100px; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px; margin: 12px 0; }
+@media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }

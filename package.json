@@ -1,5 +1,5 @@
 {
-  "name": "glatalent",
+  "name": "glatalentclaud",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,12 +11,10 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.101.0",
-    "axios": "^1.17.0",
     "lucide-react": "^1.17.0",
-    "msw": "^2.14.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^6.30.4",
+    "react-router-dom": "^7.17.0",
     "recharts": "^3.8.1",
     "zustand": "^5.0.14"
   },
