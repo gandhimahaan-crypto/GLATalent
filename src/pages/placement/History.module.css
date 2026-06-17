@@ -1,0 +1,265 @@
+.primaryAction {
+  gap: 8px;
+  border-color: var(--gla-orange);
+  background: var(--gla-orange);
+  color: #ffffff;
+}
+
+.primaryAction:hover {
+  border-color: var(--gla-orange-hover);
+  background: var(--gla-orange-hover);
+  color: #ffffff;
+}
+
+.benchmarkCard {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.65fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 20px;
+  border-color: #e5e7eb;
+  border-left: 3px solid #f26a2e;
+}
+
+.benchmarkCard h2,
+.gridTwo h2,
+.trendCard h2 {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.benchmarkCard p,
+.sectionHead p {
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.benchmarkCard strong {
+  color: #111111;
+  font-weight: 700;
+}
+
+.benchmarkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.benchmarkGrid p {
+  position: relative;
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.benchmarkGrid span,
+.metricCard span,
+.recruiterList > span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.benchmarkGrid strong {
+  font-size: 18px;
+}
+
+.benchmarkGrid i {
+  width: 28px;
+  height: 3px;
+  border-radius: 3px;
+  background: #f26a2e;
+}
+
+.metricCard {
+  border-color: #e5e7eb;
+}
+
+.metricCard h2 {
+  margin-top: 8px;
+  color: #111111;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.metricCard p {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.gridTwo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.similarStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.similarStats p {
+  display: grid;
+  gap: 3px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.similarStats span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.similarStats strong {
+  color: #111111;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.recruiterList,
+.rankedList,
+.insightList {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.recruiterList p,
+.insightList p {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #111111;
+  font-size: 13px;
+}
+
+.recruiterList svg,
+.insightList p:not(:nth-child(2)) svg {
+  color: #1f5f99;
+}
+
+.insightList p:nth-child(2) svg {
+  color: #f26a2e;
+}
+
+.rankedList p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rankedList p:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.rankedList strong {
+  color: #111111;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rankedList span {
+  color: #1f5f99;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.aiCard {
+  border-left: 3px solid #1f5f99;
+}
+
+.aiTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1f5f99;
+}
+
+.trendCard {
+  margin-top: 20px;
+  border-color: #e5e7eb;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.legend i {
+  width: 16px;
+  height: 2px;
+  background: #111111;
+}
+
+.legend span:nth-child(2) i {
+  background: #1f5f99;
+}
+
+.legend span:nth-child(3) i {
+  background: #f26a2e;
+}
+
+.keyInsights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 8px;
+}
+
+.keyInsights p {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.keyInsights strong {
+  color: #111111;
+}
+
+@media (max-width: 1100px) {
+  .benchmarkCard,
+  .gridTwo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .benchmarkGrid,
+  .similarStats,
+  .keyInsights {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHead {
+    flex-direction: column;
+  }
+}
