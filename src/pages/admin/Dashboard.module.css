@@ -1,8 +1,0 @@
-.stack { max-width: var(--content-max); margin: 0 auto; display: grid; gap: 16px; }
-.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.kpi { border-top: 3px solid var(--gla-orange); }
-.twoCol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.threeCol { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; }
-ol { padding-left: 20px; color: var(--color-muted); }
-@media (max-width: 960px) { .kpis, .twoCol, .threeCol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 620px) { .kpis, .twoCol, .threeCol { grid-template-columns: 1fr; } }

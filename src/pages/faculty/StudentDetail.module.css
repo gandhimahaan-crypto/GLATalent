@@ -1,5 +1,0 @@
-.stack { max-width: var(--content-max); margin: 0 auto; display: grid; gap: 16px; }
-.header { display: flex; align-items: center; gap: 14px; }
-.avatar { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--gla-orange); color: #fff; font-weight: 900; }
-textarea { width: 100%; min-height: 110px; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px; resize: vertical; margin: 8px 0; }
-.note { margin-top: 12px; color: var(--color-muted); }

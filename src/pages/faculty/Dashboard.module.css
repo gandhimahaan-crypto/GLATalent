@@ -1,6 +1,0 @@
-.stack { max-width: var(--content-max); margin: 0 auto; display: grid; gap: 16px; }
-.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.twoCol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.muted { color: var(--color-muted); }
-@media (max-width: 900px) { .kpis, .twoCol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .kpis, .twoCol { grid-template-columns: 1fr; } }

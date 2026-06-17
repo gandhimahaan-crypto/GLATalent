@@ -1,2 +1,0 @@
-.tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags span { padding: 5px 9px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: #fff; font-size: 12px; font-weight: 600; }
